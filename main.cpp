@@ -114,8 +114,9 @@ int main() {
     roster.printAll();
     cout << "\n";
 
+    
     cout << "Displaying invalid emails: \n\n";
-    //roster.printInvalidEmails()
+    roster.printInvalidEmails();
 
     roster.printAverageDaysInCourse("A3");
 

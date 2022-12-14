@@ -67,7 +67,7 @@ using namespace std;
                     total += daysInCourses[j];
                 }
             
-            cout << "Student ID: " << studentID << " average days in course is: " << total/3 << "\n";
+            cout << "Student ID: " << studentID << " average days in course is: " << total/3 << "\n\n";
             //total = 0;
             return;
             }
@@ -78,11 +78,14 @@ using namespace std;
         //verifies student email addresses and displays all invalid email addresses to the user.
         //A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
         
-
         for (int i = 0; i <= lastIndexOfRosterArray; i++) {
+            string email = classRosterArray[i]->getEmailAddress();
 
+            if ((email.find(' ') != std::string::npos) || (email.find(".") == std::string::npos) || (email.find("@") == std::string::npos)) {
+                cout << email << " - is invalid.\n";
+            }
         }
-        
+        cout << "\n";
     }
 
     void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
