@@ -58,20 +58,30 @@ using namespace std;
     }
 
     void Roster::printAverageDaysInCourse(string studentID) {
-        //int daysInCourses[] = int[3];
         int total = 0;
 
         for (int i = 0; i <= lastIndexOfRosterArray; i++) {  
-            for (int j = 0; j < 3; j++) {
-                int array[3] = classRosterArray[i]->getDaysInCourses();
-             }
+            if  (classRosterArray[i]->getId() == studentID) {
+                int* daysInCourses = classRosterArray[i]->getDaysInCourses();
+                for (int j = 0; j < 3; j++) {
+                    total += daysInCourses[j];
+                }
+            
+            cout << "Student ID: " << studentID << " average days in course is: " << total/3 << "\n";
+            //total = 0;
+            return;
+            }
         }
-    
     }
 
     void Roster::printInvalidEmails() {
         //verifies student email addresses and displays all invalid email addresses to the user.
         //A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
+        
+
+        for (int i = 0; i <= lastIndexOfRosterArray; i++) {
+
+        }
         
     }
 

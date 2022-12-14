@@ -117,6 +117,8 @@ int main() {
     cout << "Displaying invalid emails: \n\n";
     //roster.printInvalidEmails()
 
+    roster.printAverageDaysInCourse("A3");
+
     //Showing students in degree program: SOFTWARE
 
     cout << "removing A3\n";
