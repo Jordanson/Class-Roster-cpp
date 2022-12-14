@@ -22,7 +22,7 @@ int main() {
     "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", 
     "A5,Jordan,Robertson,jro1047@wgu.edu,29,99,69,96,SOFTWARE"};
 
-    cout<<"Scripting and Programming - Applications - C867\nC++\n001400935\nJordan Robertson\n\n";
+    cout<<"Scripting and Programming - Applications - C867\nC++\n001400935\nJordan Robertson\n";
 
 
 
@@ -106,11 +106,9 @@ int main() {
         cout << "\n";
 
         roster.add(id, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, degree);
-        //roster.printInvalidEmails();
-        
-
     }
-    cout << "Displaying all students: \n";
+
+    cout << "Displaying all students: \n\n";
     roster.printAll();
     cout << "\n";
 
@@ -120,11 +118,15 @@ int main() {
 
     roster.printAverageDaysInCourse("A3");
 
-    //Showing students in degree program: SOFTWARE
+    cout << "Showing students in degree program: SOFTWARE" << "\n\n";
+    roster.printByDegreeProgram(SOFTWARE);
 
-    cout << "removing A3\n";
+    //cout << "Removing A3\n";
     roster.remove("A3");
+    
     roster.printAll();
+
+    roster.remove("A3");
 
 }
 

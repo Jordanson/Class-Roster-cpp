@@ -39,7 +39,7 @@ using namespace std;
     void Roster::remove(string studentID) {   
         for (int i = 0; i <= lastIndexOfRosterArray; i++) {
             if  (classRosterArray[i]->getId() == studentID) {
-                    cout << "removed: " << studentID << endl;
+                    cout << "Removing: " << studentID << "\n\n";
                     delete classRosterArray[i];
 
                     classRosterArray[i]=classRosterArray[lastIndexOfRosterArray];
@@ -47,7 +47,7 @@ using namespace std;
                     return;
                 }
         }
-        cout << "The student with the ID: " << studentID << " was not found\n";
+        cout << "The student with the ID: " << studentID << " was not found\n\n";
     }
 
     void Roster::printAll() {
@@ -55,6 +55,7 @@ using namespace std;
         for (int i = 0; i <= lastIndexOfRosterArray; i++) {
             classRosterArray[i]->print();
         }
+        cout << "\n";
     }
 
     void Roster::printAverageDaysInCourse(string studentID) {
@@ -67,8 +68,7 @@ using namespace std;
                     total += daysInCourses[j];
                 }
             
-            cout << "Student ID: " << studentID << " average days in course is: " << total/3 << "\n\n";
-            //total = 0;
+            cout << "Student ID: " << studentID << ", average days in course is: " << total/3 << "\n\n";
             return;
             }
         }
@@ -89,5 +89,10 @@ using namespace std;
     }
 
     void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-
+        for (int i = 0; i <= lastIndexOfRosterArray; i++) {
+            if (classRosterArray[i]->getDegreeProgram() == degreeProgram) {
+                classRosterArray[i]->print();
+            }
+        }
+        cout << "\n";
     }
