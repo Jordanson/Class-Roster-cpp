@@ -15,7 +15,15 @@
 using namespace std;
 
 
-    //Student* classRosterArray = new Student[5];
+ 
+    Roster::~Roster()
+        {
+            //delete []classRosterArray;
+            cout<<"\n Destructor executed";
+        }
+
+
+    //classRosterArray = new Student[5];
     int numberOfStudentsAdded = 0;
     int lastIndexOfRosterArray = 4;
   
@@ -51,7 +59,6 @@ using namespace std;
     }
 
     void Roster::printAll() {
-        //prints a complete tab-separated list of student data, each data point indented (tab)
         for (int i = 0; i <= lastIndexOfRosterArray; i++) {
             classRosterArray[i]->print();
         }
@@ -68,16 +75,13 @@ using namespace std;
                     total += daysInCourses[j];
                 }
             
-            cout << "Student ID: " << studentID << ", average days in course is: " << total/3 << "\n\n";
+            cout << "Student ID: " << studentID << " average days in course is: " << total/3 << "\n\n";
             return;
             }
         }
     }
 
-    void Roster::printInvalidEmails() {
-        //verifies student email addresses and displays all invalid email addresses to the user.
-        //A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
-        
+    void Roster::printInvalidEmails() {      
         for (int i = 0; i <= lastIndexOfRosterArray; i++) {
             string email = classRosterArray[i]->getEmailAddress();
 

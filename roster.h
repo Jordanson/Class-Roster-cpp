@@ -3,7 +3,6 @@
 
 #include "student.h"
 #include <string>
-#include <map>
 
 
 class Roster {
@@ -15,6 +14,8 @@ class Roster {
 
 
         public:
+            ~Roster();
+
             void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, 
             int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
             
